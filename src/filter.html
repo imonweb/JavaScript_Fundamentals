@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS Basics</title>
+</head>
+<body>
+  <h1>JavaScript</h1>
+
+  <script>
+     /*  filteer */
+    //  does return a new array
+    // can manipulate the size of new array
+    // returns based on condition
+
+     const people = [
+       { name: 'bob', age: 20, position: 'developer'},
+       { name: 'peter', age: 25, position: 'designer'},
+       { name: 'susy', age: 30, position: 'the bosss'},
+       { name: 'anna', age: 35, position: 'accountant'},
+     ];
+
+     const youngPeople = people.filter(function(person){
+       return person.age <= 25;
+     }) 
+
+     const developers = people.filter(function(person){
+       return person.position === 'developer';
+     })
+
+    //  console.log(youngPeople);
+     console.log(developers);
+
+
+  </script>
+  <script src="myBundle.js"></script>
+</body>
+</html>

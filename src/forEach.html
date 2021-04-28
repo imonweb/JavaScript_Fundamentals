@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS Basics</title>
+</head>
+<body>
+  <h1>JavaScript</h1>
+
+  <script>
+     /*  Array Methods */
+     /*  forEach */
+
+     const people = [
+       { name: 'bob', age: 20, position: 'developer'},
+       { name: 'peter', age: 25, position: 'designer'},
+       { name: 'susy', age: 30, position: 'the bosss'}
+     ];
+
+     function showPerson(person){
+      console.log(person.position.toUpperCase());
+     }
+
+    //  people.forEach(showPerson)
+
+    people.forEach(function(item){
+      console.log(item.position.toLocaleUpperCase());
+    })
+
+   
+
+   
+     
+      
+  </script>
+  <script src="myBundle.js"></script>
+</body>
+</html>
