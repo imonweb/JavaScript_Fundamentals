@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS Basics</title>
+</head>
+<body>
+  <h1>JavaScript</h1>
+
+  <script>
+       
+     /*  Higher Order Function - accepts another function as an argument or returns another function as a result. */
+
+     /*  A Higher Order function is a function that takes a function as an argument, or returns a function. Higher order function is in contrast to first order functions, which don't take a function as an argument or return a function as output.  */
+     /*  ex. .map() and .filter() */
+
+     /*  First-Order function whic filter all the 4-letter words from a list */
+
+     const censor = words => {
+       const filtered = [];
+       for (let i = 0, {length } = words; i < length; i++) {
+         const word = words[i];
+         if(word.length !==4) filtered.push(word);
+       }
+       return filtered;
+     };
+     censor(['oops','gasp','shout','su']);
+     console.log(censor);
+ 
+
+  </script>
+
+   <!--  Higher order functions are functions that operate on other functions, either by taking them as arguments or by
+  returning them. In simple words, A Higher-Order function is a function that receives a function as an argument or
+  returns the function as output.  -->
+  
+   <!-- For example, Array.prototype.map, Array.prototype.filter and Array.prototype.reduce   -->
+
+  <!-- Without Higher-order function -->
+
+  <script>
+    /*
+    const arr1 = [1, 2, 3];
+      const arr2 = []; for (let i = 0; i < arr1.length; i++) {
+        arr2.push(arr1[i] * 2);
+      }// prints [ 2, 4, 6 ]
+      console.log(arr2);
+    */
+  </script>
+
+  <!-- With Higher-order function map -->
+  <script>
+   const arr1 = [1, 2, 3]; 
+   const arr2 = arr1.map(function (item) {
+      return item * 2;
+    }); 
+    console.log(arr2);
+  </script>
+
+  <!--The filter() method creates a new array with all elements that pass the test provided by the callback function. The callback function passed to the filter() method accepts 3 arguments: element, index, and array.  -->
+
+  <script>
+    /*  Let’s say we have an array which contains objects with name and age properties. We want to create an array that contains only the persons with full age (age greater than or equal to 18).    
+ */
+
+    /*  Without High-Order Function */
+    const persons = [
+        { name: 'Peter', age: 16 },
+        { name: 'Mark', age: 18 },
+        { name: 'John', age: 27 },
+        { name: 'Jane', age: 14 },
+        { name: 'Tony', age: 24 },
+      ]; 
+      const fullAge = []; 
+      for (let i = 0; i < persons.length; i++) {
+        if (persons[i].age >= 18) {
+          fullAge.push(persons[i]);
+        }
+      } console.log(fullAge);
+
+    /*  With High-order function filter */
+    const persons2 = [
+        { name: 'Peter', age: 16 },
+        { name: 'Mark', age: 18 },
+        { name: 'John', age: 27 },
+        { name: 'Jane', age: 14 },
+        { name: 'Tony', age: 24 },
+      ]; 
+      const fullAge2 = persons.filter(person => person.age >= 18); 
+      console.log(fullAge2);
+
+      /*  Creating Our own Higher-Order Function */
+      const strArray = ['JavaScript', 'Python', 'PHP', 'Java', 'C'];
+        function mapForEach(arr, fn) {
+          const newArray = [];
+          for (let i = 0; i < arr.length; i++) {
+            newArray.push(
+              fn(arr[i])
+            );
+          } return newArray;
+        } const lenArray = mapForEach(strArray, function (item) {
+          return item.length;
+        });// prints [ 10, 6, 3, 4, 1 ]
+        console.log(lenArray);
+        
+  </script>
+  <script src="myBundle.js"></script>
+</body>
+</html>

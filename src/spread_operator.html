@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS Basics</title>
+</head>
+<body>
+  <h1>JavaScript</h1>
+
+  <script>
+    // spread operator
+    /*  function calls, in array literals, in object literals */
+    /*  
+      - Create copies of objects with updated values
+      - Collects remaining keys off object destructuring
+      - provides similar functionality to Object.assign()
+
+    */
+
+    const user = {
+      name: "John",
+      age: 20
+    };
+
+    /*
+    const copied = { ...user, age: 30, occupation: "Web Developer" };
+    const copied2 = Object.assign({}, copied, {
+      age: 40,
+      occupation: "Web Designer"
+    })
+    
+    console.log(copied);
+    console.log(copied2);
+    */
+   
+   const copied = { ...user, age: 30, occupation: "Web Developer" };
+   const { name, age, ...other } = copied;
+
+   console.log(name);
+   console.log(age);
+   console.log(other);
+
+
+
+
+
+
+    const temperatures = [45, 23, 23, 33, 32]    
+    Math.min(...temperatures);
+
+    const tvShows = ['Six Feet Under', 'Chernobly', 'Black Mirror', 'FleaBag']
+    // console.log(...tvShows);
+
+    const parents = ["Lorie", "Stevie"];
+    const kids = ['Jake','Janey','Jack'];
+    const fullFamily = [parents, kids];
+    // console.log(fullFamily)
+
+    const fullFamily2 = [...parents, ...kids]
+    // console.log(fullFamily2);
+
+    function addNumbers(a, b, c){
+      // console.log(a + b + c)
+    }
+
+    let nums = [3, 4, 5]
+    // addNumbers(nums[0], nums[1], nums[2]);
+    addNumbers(...nums);
+
+    let fruits = ['banana','apple','orange']
+    let myFav = ['mango',...fruits, 'pineapple']
+    // console.log(myFav);
+
+  </script>
+  <script src="myBundle.js"></script>
+</body>
+</html>

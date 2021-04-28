@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS Basics</title>
+</head>
+<body>
+  <h1>JS Basics</h1>
+
+  <script>
+    // Arrays and for loop
+    const names = ['John','Jane','Joe']
+    const lastName = 'Doe'
+
+    let newArray = [];
+
+    // for loop
+    for(let i = 0; i < names.length; i++){
+      console.log(names[i]);
+      const fullName = `${names[i]} ${lastName}`;
+      newArray.push(fullName);
+    }
+
+    console.log(newArray);
+
+
+  </script>
+  <script src="myBundle.js"></script>
+</body>
+</html>
